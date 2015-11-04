@@ -4,15 +4,15 @@ AboutMe = React.createClass({
 		<div className = "container-fluid">
 			<div className = "row" id="black">
 				<div className = "col-sm-1 col-md-1 col-lg-1">
-					<br />
 					<a href="https://ca.linkedin.com/pub/james-jiang/74/580/80" target="_blank"><img src="linkedin.jpg" /></a>
-					<br /><br /><br /><br />
+					<br /><br /><br />
 					<a href="https://github.com/0roboros" target="_blank"><img src="github.png" /></a>
-					<br /><br /><br /><br />
+					<br /><br /><br />
 					<a href="https://www.facebook.com/jjamesjiang" target="_blank"><img src="facebook.jpg" /></a>
-					<br /><br /><br /><br />
+					<br /><br /><br />
 					<a href="https://plus.google.com/113279935882869334781" target="_blank"><img src="googleplus.jpg" /></a>
-					
+					<br /><br /><br />
+					<a href="https://s3-us-west-2.amazonaws.com/jamesjiang/JamesJiangResume.pdf" target="_blank"><img src="resume.jpg" /></a>
 				</div>
 				<div className = "col-sm-6 col-md-6 col-lg-6">
 					<img src="jamesjiang.jpg" /> 
