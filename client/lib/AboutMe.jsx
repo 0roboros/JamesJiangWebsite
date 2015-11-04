@@ -25,7 +25,7 @@ AboutMe = React.createClass({
 				<div className = "col-sm-12 col-md-12 col-lg-12">
 					<p> My name is James Jiang, a 4th year student currently studying Computer Science at the University of Waterloo, 
 						and Business Administration at Wilfrid Laurier University. I am very interested in data-driven products, artificial
-						intelligence, and virtual reality. </p>
+						intelligence, machine learning, and virtual reality. </p>
 					<p>I am a very curious individual, and need to constantly learn new things. If the challenge or problem is novel or 
 					something I haven't seen before, then that's even better. However, merely learning something or understanding it is not enough. 
 					Rather, applying the concept in a useful and practical way is a must.
