@@ -81,6 +81,7 @@ const routes = (
 		
 		controls = new THREE.OrbitControls( camera, renderer.domElement );
 		controls.enableZoom = false;
+		controls.enablePan = false;
 		//controls.minDistance = 985;
 		//controls.maxDistance = 985;
 		
@@ -131,41 +132,48 @@ const routes = (
 					points[itr].x -= 500;
 				}
 				particles = new THREE.Geometry();
-				pMaterial = new THREE.PointsMaterial({
-					//color: 0xffffff,
-					size: 20,
-					map: THREE.ImageUtils.loadTexture("particleblue.png"),
-					blending: THREE.AdditiveBlending,
-					transparent: true,
-					alphaTest: 0.5
-				});
+				var loader = new THREE.TextureLoader();
 				
 				
+				loader.load(
+					"particleblue.png",
+					function ( texture ){
+						pMaterial = new THREE.PointsMaterial({
+						//color: 0xffffff,
+						size: 20,
+						map: texture,
+						blending: THREE.AdditiveBlending,
+						transparent: true,
+						alphaTest: 0.5
+						});
+					
+					
+					
+					
+						for ( var z= 0; z < numPoints; z+=1 ) {
+							var vDestination = new THREE.Vector3(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1);
 				
+							vDestination.normalize();
+							vDestination.multiplyScalar( 300 );
+							//stars.push(sphere); 
+							
+							starsx.push(vDestination.x);
+							starsy.push(vDestination.y);
+							starsz.push(vDestination.z);
+							
+							
+							//var vOrigin = new THREE.Vector3(Math.random() * 4000 - 2000, Math.random() * 2000 - 1000, Math.random() * 2500 - 1250);
+							
+							particles.vertices.push(points[z]);
+							//goingx.push(Math.random() * 4 - 2);
+							//goingy.push(Math.random() * 4 - 2);					
+							//goingz.push(Math.random() * 4 - 2);	
+						}
+					
+						particleSystem = new THREE.Points(particles, pMaterial);
+					}
+				);
 				
-                for ( var z= 0; z < numPoints; z+=1 ) {
-                    var vDestination = new THREE.Vector3(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1);
-        
-					vDestination.normalize();
-					vDestination.multiplyScalar( 300 );
-                    //stars.push(sphere); 
-					
-					starsx.push(vDestination.x);
-					starsy.push(vDestination.y);
-					starsz.push(vDestination.z);
-					
-					
-					//var vOrigin = new THREE.Vector3(Math.random() * 4000 - 2000, Math.random() * 2000 - 1000, Math.random() * 2500 - 1250);
-					
-					particles.vertices.push(points[z]);
-					//goingx.push(Math.random() * 4 - 2);
-					//goingy.push(Math.random() * 4 - 2);					
-					//goingz.push(Math.random() * 4 - 2);	
-					
-
-                }
-				
-				particleSystem = new THREE.Points(particles, pMaterial);
     }
 	
 	function addHead() {
@@ -182,7 +190,7 @@ const routes = (
 			head.position.y = 35;
 			head.scale.x = head.scale.y = head.scale.z = 45;
 			edges = new THREE.EdgesHelper(head, 0x000000, 0.1);
-			edges.material.linewidth = 10;
+			edges.material.linewidth = 1;
 			edges.material.transparent = true;
 			edges.material.opacity = 0;
 			items.push(head);
@@ -221,7 +229,7 @@ const routes = (
 			laptop.position.z = 220;
 			laptop.scale.x = laptop.scale.y = laptop.scale.z = 9;
 			edges = new THREE.EdgesHelper(laptop, 0x000000, 20);
-			edges.material.linewidth = 10;
+			edges.material.linewidth = 1;
 			edges.material.transparent = true;
 			edges.material.opacity = 0;
 			items.push(laptop);
@@ -261,7 +269,7 @@ const routes = (
 			book.position.x = 215;
 			book.scale.x = book.scale.y = book.scale.z = 1.5;
 			edges = new THREE.EdgesHelper(book, 0x000000, 5);
-			edges.material.linewidth = 10;
+			edges.material.linewidth = 1;
 			edges.material.transparent = true;
 			edges.material.opacity = 0;
 			items.push(book);
@@ -300,7 +308,7 @@ const routes = (
 			king.position.z = -230;
 			king.scale.x = king.scale.y = king.scale.z = 22;
 			edges = new THREE.EdgesHelper(king, 0x000000, 15);
-			edges.material.linewidth = 10;
+			edges.material.linewidth = 1;
 			edges.material.transparent = true;
 			edges.material.opacity = 0;
 			items.push(king);

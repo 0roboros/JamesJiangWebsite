@@ -32,12 +32,11 @@ AboutMe = React.createClass({
 					</p>
 					
 					<p>I spend a lot of time immersed in my own world, but I also love to exchange ideas in a meaningful manner with those 
-					who share similar interests (see "My Fun" page).
-					I especially enjoy talking about possibilities, instead of what already exists.
+					who share similar interests.
 					</p>
 					<header>Frequently Asked Questions</header>
 					<p> Why are you studying both Computer Science and Business Administration? </p>
-					<p> This is the most common soft question I get asked during interviews, and I think the answer defines me very well - 
+					<p> This is the most common personal question I get asked during interviews, and I think the answer defines me very well - 
 					I like seeing the big picture. Although I consider myself a detail oriented engineer at heart, I believe a business 
 					background will give me a more holistic view of whatever I work on - 
 					whether it's understanding customer needs, interpreting decision from higher ups, or communicating with team members. </p>
