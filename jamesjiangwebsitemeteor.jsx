@@ -73,6 +73,9 @@ const routes = (
         // To allow render overlay on top of sprited sphere
 		renderer.autoClear = false;
 		
+		// Set renderer pixel ratio
+		renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1)
+		
         //add the renderer to the html document body
         document.body.appendChild( renderer.domElement );
 		
@@ -169,7 +172,7 @@ const routes = (
 		var loader = new THREE.JSONLoader();
 		loader.load("humanheadgeo.json", function ( geometry ) {
 			material = new THREE.MeshBasicMaterial({
-				//color: 0xffffff,
+				color: 0xffffff,
 				//wireframe: true
 				transparent: true,
 				opacity: 0
@@ -209,7 +212,7 @@ const routes = (
 		var loader = new THREE.JSONLoader();
 		loader.load("laptopgeo.json", function ( geometry ) {
 			material = new THREE.MeshBasicMaterial({
-				//color: 0xffff00,
+				color: 0xffffff,
 				//wireframe: true
 				transparent: true,
 				opacity: 0
@@ -249,7 +252,7 @@ const routes = (
 		var loader = new THREE.JSONLoader();
 		loader.load("bookgeo.json", function ( geometry ) {
 			material = new THREE.MeshBasicMaterial({
-				//color: 0xffff00,
+				color: 0xffffff,
 				//wireframe: true
 				transparent: true,
 				opacity: 0
@@ -288,7 +291,7 @@ const routes = (
 		var loader = new THREE.JSONLoader();
 		loader.load("kinggeo.json", function ( geometry ) {
 			material = new THREE.MeshBasicMaterial({
-				//color: 0xff0000,
+				color: 0xffffff,
 				//wireframe: true
 				transparent: true,
 				opacity: 0
