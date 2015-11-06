@@ -1,6 +1,7 @@
 Blog = React.createClass({
 	render: function() {
 		return (
+
 		<div className = "container-fluid">
 			<div className = "row" id="black">
 				<div className = "col-sm-10 col-md-10 col-lg-10">
@@ -39,8 +40,9 @@ Blog = React.createClass({
 					<div id="fixed">
 						<p><a href="javascript:;" onClick={this.scrollIntoView.bind(this, "gen")}>Genesys Hackathon Experience </a></p>
 						<p><a href="javascript:;" onClick={this.scrollIntoView.bind(this, "kali")}>Penetration Testing with Kali Linux </a></p>
-						<br />
-						<p><a href="javascript:;" onClick={this.goBack}> Back to Main Menu </a></p>
+						<p><a href="javascript:;" onClick={this.scrollIntoView.bind(this, "spring")}>Spring Boot and Dependency Injection </a></p>
+						<br /><br />
+						<p><a href="javascript:;" onClick={this.goBack}><strong> Back to Main Menu </strong></a></p>
 					</div>
 				</div>
 			</div>
@@ -151,12 +153,72 @@ Blog = React.createClass({
 					
 					<p>
 						Strictly speaking, if you use lots of special characters in your password, and disable WPS, you should be very safe. 
-						For now. Until someone discovers a new exploit, like the very new WPS Pixie Dust Attack. But I won't be talking about it.
-						This post has been way too long. Google it if you're interested.
+						For now. Until someone discovers a new exploit, like the very new WPS Pixie Dust Attack. But I won't be talking about it -
+						this post has been way too long. Google it if you're interested.
 					</p>
 					
 					<p>
 						That's it for now.
+					</p>
+				</div>
+			</div>
+			<div className = "row" id="black">
+				<div className = "col-sm-10 col-md-10 col-lg-10">
+					<header id="spring">Spring Boot and Dependency Injection</header>
+					<p>July 2nd, 2015</p>
+
+					<p>
+						I spent the majority of my time coding in Spring Java at my last internship. The app that I'm working on, Spark, is also Backended
+						with Spring Boot. The Spring framework is based on the idea of Dependency Injection. But what exactly does that mean?
+						Well, let us consider the case of a normal constructor:
+					</p>
+					
+						<img src="carbefore.jpg" />
+						
+					<p>
+						In the example above, we can see that there is a clear dependency between car and engine. 
+						
+						Now, here the dependency injection version:
+					</p>
+					
+						<img src="carafter.jpg" />
+						
+					<p>
+						By changing Engine to IEngine, and allowing it to be passed in as a parameter, we have performed an inversion of control:
+						The client chooses which implementation of IEngine to use and injects it as a dependency to Car. This is good object oriented
+						practice because it keeps code loosely coupled, and makes Car depend on an interface rather than an implementation.
+					</p>
+					<p>
+						Anyways, lets talk about Spring. The idea behind Spring is that we create Beans that specify which
+						implementation of an interface we want.
+						
+						For example, a common interface in Spring is the JDBC.DataSource Interface, which is how the application will talk
+						the database. However, it does not state which database technology to use. That is up to the programmer to
+						decide and initialize in the form of beans. 
+						
+						If the programmer wants to use postgresql, then they can create the follow config variables in Spring Boot:
+						
+					</p>
+					
+						<img src="springconfig.jpg" />
+
+					<p>
+						Spring will then inject this dependency as the DataSource, and we can talk to our PostgreSql database.
+						If in the future, we decide that that PostgreSql sucks and we want to use Mongo instead, we can simply inject a Mongo bean
+						instead. All we have to do is change the configuration, and not the source code. This is because the code depends on the DataSource interface,
+						and not any specific implementation of it.
+					</p>
+					<p>
+						And what do I think about all of this? I think its very useful for large projects, giving them the ability
+						to be fluid and change components without having to rewrite entire codebases. Its like OOP version 2,
+						where you have EVEN more overhead cost at the start, but gain code reuse and long term maintainability.
+						Luckily, Spring Boot mitigates a lot of that overhead cost by taking an opiniated view on things
+						and setting up many basic functionality for you.
+						
+					</p>
+					
+					<p>
+						Its pretty neat, and I'm glad to have learned it and the many design principles that come with it.
 					</p>
 				</div>
 			</div>

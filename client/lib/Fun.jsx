@@ -81,6 +81,33 @@ Fun = React.createClass({
 					</div>
 				</div>
 			</div>
+			<div className = "row" id="black">
+				<div className = "col-sm-5 col-md-5 col-lg-5">
+					<img src="compiler.jpg" />
+				</div>
+				<div className = "col-sm-7 col-md-7 col-lg-7">
+					<header>WLP4 Compiler </header>
+					<ul>
+						<li> Created a compiler for WLP4, a strict subset of C++. </li>
+						<li> Learned about symbol tables and tokenization. </li>
+						<li> Applied various compiler optimizations, such as loop fusion. </li>
+					</ul>
+				</div>
+			</div>
+			<div className = "row" id="black">
+				<div className = "col-sm-7 col-md-7 col-lg-7">
+					<header>Dungeon Crawler 3000 <a href="https://github.com/0roboros/Dungeon-Crawler-3000" target="_blank"><img id="logo" src="github.png" /></a></header>
+					<ul>
+						<li> Dungeon crawler game using standard input/output. </li>
+						<li> Applied common OOP Patterns: Singleton, Decorator, Observer, Factory. </li>
+						<li> Learned about virtual pointers, circular dependencies, UML designs. </li>
+					</ul>
+
+				</div>
+				<div className = "col-sm-5 col-md-5 col-lg-5">
+					<img src="dungeoncrawler.jpg" />
+				</div>
+			</div>
 		</div>
 		);
 	},
